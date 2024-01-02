@@ -2,16 +2,13 @@ import gui
 import streamlit as st;
 from data import *
 
-# Function to perform the CYK Algorithm
+
 def CYK(words, n):
-    # Mengubah lhs aturan grammar menjadi huruf kecil
-    # R_lower = {key.lower(): [[rule for rule in rules] for rules in rules_list] for key, rules_list in R.items()}
 
     # Inisialisasi tabel
     T = [[set([]) for _ in range(n)] for _ in range(n)]
-    # Filling in the table
+
     for j in range(n):
-        # Iterate over the rules
         for lhs, rule in R.items():
             for rhs in rule:
                 # If a terminal is found
@@ -32,7 +29,7 @@ def CYK(words, n):
                         if len(rhs) == 2 and rhs[0] in T[i][k] and rhs[1] in T[k + 1][j]:
                             T[i][j].add(lhs)
 
-    # If the sentence can be formed by rules of the given grammar
+
     # width = 600
     if "K" in T[0][n - 1]:
         # st.table(T);
