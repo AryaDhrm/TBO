@@ -33,8 +33,10 @@ def GUI():
             st.write("# Kolom tidak boleh :red[Kosong]") 
         elif cek == 'fek':
             st.write("# Kalimat :red[Tidak Valid]")
+            # st.write(T)
         else:
             st.write("# Kalimat :green[Valid]") 
+            # st.write(T);
             st.balloons()
             
     st.write("---")

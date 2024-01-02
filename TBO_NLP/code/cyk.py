@@ -1,4 +1,5 @@
 import gui
+import streamlit as st;
 from data import *
 
 # Function to perform the CYK Algorithm
@@ -8,7 +9,6 @@ def CYK(words, n):
 
     # Inisialisasi tabel
     T = [[set([]) for _ in range(n)] for _ in range(n)]
-
     # Filling in the table
     for j in range(n):
         # Iterate over the rules
@@ -17,8 +17,12 @@ def CYK(words, n):
                 # If a terminal is found
                 if len(rhs) == 1 and rhs[0] == words[j]:
                     T[j][j].add(lhs)
+                 
 
         for i in range(j - 1, -1, -1):
+            # st.write(T);
+            # print(T);
+            # st.write(T);
             # Iterate over the range i to j + 1
             for k in range(i, j):
                 # Iterate over the rules
@@ -28,14 +32,15 @@ def CYK(words, n):
                         if len(rhs) == 2 and rhs[0] in T[i][k] and rhs[1] in T[k + 1][j]:
                             T[i][j].add(lhs)
 
-    # ... (sisa kode tetap tidak berubah)
-
     # If the sentence can be formed by rules of the given grammar
+    # width = 600
     if "K" in T[0][n - 1]:
+        # st.table(T);
         # print(T[0][n - 1])
         # print("AWAWA")
         gui.cek = 'rill'
-        return T;
+        # st.table(T);
+        # return T;
         # st.ballons()
         # print("False")
     else:
