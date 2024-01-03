@@ -4,35 +4,42 @@ from data import *
 
 
 def CYK(words, n):
-
-    # Inisialisasi tabel
+    
     T = [[set([]) for _ in range(n)] for _ in range(n)]
-
+    
     for j in range(n):
+        # print("mAssikkk")
         for lhs, rule in R.items():
             for rhs in rule:
-                # If a terminal is found
+                # print("Masuk coy")
+                # if len(rhs) == 2:
+                #     print(rhs)
+                #     print()
                 if len(rhs) == 1 and rhs[0] == words[j]:
                     T[j][j].add(lhs)
-                 
-
+                    # st.table(T)
+            
+        # break;      
+        # print(j)
         for i in range(j - 1, -1, -1):
-            # st.write(T);
-            # print(T);
-            # st.write(T);
-            # Iterate over the range i to j + 1
+            # i = 0 <= j-1
+            print("masuk")
             for k in range(i, j):
-                # Iterate over the rules
+                # print()
+                # print(j)
                 for lhs, rule in R.items():
                     for rhs in rule:
-                        # If a terminal is found
+                        # print(rule)
                         if len(rhs) == 2 and rhs[0] in T[i][k] and rhs[1] in T[k + 1][j]:
+                            # print(i,j)
                             T[i][j].add(lhs)
-
+                            # st.table(T)
+                            # if T[0][n - 1]:
+                        
 
     # width = 600
     if "K" in T[0][n - 1]:
-        # st.table(T);
+        st.table(T);
         # print(T[0][n - 1])
         # print("AWAWA")
         gui.cek = 'rill'

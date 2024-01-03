@@ -19,7 +19,7 @@ def GUI():
             button_click = 1
             kata = sentence.split()
             n = len(kata)
-            print(n)
+            # print(n)
             for i in range(n):
                 kata[i] = kata[i].lower()
             if n != 0:
@@ -32,6 +32,28 @@ def GUI():
         elif n == 0 :
             st.write("# Kolom tidak boleh :red[Kosong]") 
         elif cek == 'fek':
+            # print("Masuk")
+            # # print(kata[n-2])
+            # # temp_index = 0
+            # # for i in range(n):
+            # #     if kata[i] == 'jawa':
+            # #         temp_index = i
+            # #         pass
+                
+            # if kata[n-2] == 'jawa' or kata[i] == 'jawa':
+            #     print(i)
+            #     if kata[i-1] == 'adalah' or kata[-1] == 'memang' or kata[-1] == 'manusia': 
+            #         temp_jawa = kata[i-2]
+            #     else:
+            #         print("wadoooh")
+            #         temp_jawa = kata[i-1]
+            #     # st.write("# f'{temp_jawa}' adalah jawa")
+            #     # st.write("Kamu f'{temp_jawa}'")
+            #     st.write(f"#  :green[Valid,] {temp_jawa} adalah jawa")
+
+            #     # st.write("Kamu f'{temp_jawa}'")
+            #     # st.write("# Kalimat :green[Valid] kamu jawa")
+            # else:    
             st.write("# Kalimat :red[Tidak Valid]")
             # st.write(T)
         else:
