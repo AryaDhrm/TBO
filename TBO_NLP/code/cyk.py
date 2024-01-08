@@ -30,7 +30,7 @@ def CYK(words, n):
                 for lhs, rule in R.items():
                     for rhs in rule:
                         # print(rule)
-                        if len(rhs) == 2 and rhs[0] in T[i][k] and rhs[1] in T[k + 1][j]:
+                        if len(rhs) == 2 and rhs[0] in T[i][k] and rhs[1] in T[k + 1][j]    :
                             # print(i,j)
                             T[i][j].add(lhs)
                             # st.table(T)
@@ -48,6 +48,7 @@ def CYK(words, n):
         # st.ballons()
         # print("False")
     else:
+        st.table(T);
         gui.cek = 'fek'
         # print("True")
 
